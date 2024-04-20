@@ -2,8 +2,9 @@
 class Star_Cinema:
     hall_list = []
 
-    def entry_hall(self, newHall):
-        self.hall_list.append(newHall)
+    def entry_hall(self, rows, cols, hall_no):
+        obj = Hall(rows, cols, hall_no)
+        self.hall_list.append(obj)
 
 
 class Hall(Star_Cinema):
@@ -13,7 +14,6 @@ class Hall(Star_Cinema):
         self.__rows = rows
         self.__cols = cols
         self.hall_no = hall_no
-        super().entry_hall(self)
 
     def entry_show(self, id, movie_name, time):
         touple = (id, movie_name, time)
